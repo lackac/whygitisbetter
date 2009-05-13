@@ -97,44 +97,50 @@
           </div>
 
           <h2>
-          <a name="cheap-local-branching" href="#cheap-local-branching">Cheap Local Branching</a>
+          <a name="cheap-local-branching" href="#cheap-local-branching">Olcsó lokális branch-ek</a>
           </h2>
           <div class="contents">
 
             <div class="text">
-              Probably Git's most compelling feature that really makes it stand
-              apart from nearly every other SCM out there is its branching
-              model.  It is completely different from all of the models I'm
-              comparing it to here, most of which recommend that the best branch
-              is basically a clone of the repository in a new directory.
+              A Git branch-elő modellje talán a legfontosabb jellemző, ami
+              igazán kiemeli az összes többi verizókövető rendszer közül.
+              Ez teljesen eltér az összes többi modelltől, amivel itt
+              összehasonlítom, és amelyek közül a legtöbb azt az elvet ajánlja,
+              hogy a legjobb branch igazából a repository klónozása egy új
+              könyvtárba.
             </div>
 
             <div class="text">
-              Git does not work like that.  Git will allow you to have multiple
-              local branches that can be entirely independent of each other and
-              the creation, merging and deletion of those lines of development
-              take seconds.
+              A Git nem így működik.  Git segítségével több lokális branch-et
+              tarthatsz fenn, amelyek teljesen függetlenek egymástól. Ezen
+              fejlesztési vonalak létrehozása, egyesítése és törlése csupán
+              másodpercekbe kerül.
             </div>
 
 
             <div class="text">
-              This means that you can do things like:
+              Ez azt jelenti, hogy olyan dolgokat tehetsz, mint például:
               <ul>
-                <li>Create a branch to try out an idea, commit
-                  a few times, switch back to where you branched from, apply a patch,
-                  switch back to where you are experimenting, then merge it in.
+                <li>Létrehozol egy új branch-et, hogy kipróbálhass egy új
+                  ötletet, néhányszor commitolsz, visszaváltasz oda, ahonnan
+                  branch-eltél, egy patch-et alkalmazol, visszaváltasz a
+                  kisérletező helyre, és beolvasztod.
                 </li>
-                <li>Have a branch that always contains only what goes to production,
-                  another that you merge work into for testing and several smaller
-                  ones for day to day work
+                <li>Fenntartasz egy branch-et, amiben mindig csak az éles
+                  rendszerbe kerülő dolok vannak, egy másikat amibe a
+                  tesztelésre kerülő munkákat olvasztod be, és több kisebbet
+                  a mindennapi feladatokra.
                 </li>
-                <li>Create new branches for each new feature you're working on, so
-                  you can seamlessly switch back and forth between them, then delete
-                  each branch when that feature gets merged into your main line.
+                <li>Minden újabb feladatra, amelyen dolgoznod kell új branch-et
+                  hozol létre, hogy gond nélkül váltogathass közöttük.  Ezek
+                  után mindegyiket törlöd, amikor az adott dolog beolvasztásra
+                  kerül a főágban.
                 </li>
-                <li>Create a branch to experiment in, realize it's not going to
-                  work and just delete it, abandoning the work&mdash;with nobody else
-                  ever seeing it (even if you've pushed other branches in the meantime)
+                <li>Létrehozol egy új branch-et kísérletezésre, majd rájössz,
+                  hogy az úgy nem fog működni, és ezért egyszerűen kitörlöd,
+                  lemondva az abban végzett munkádról. Ezt az egészet pedig
+                  senki más nem látja (akkor sem, ha közben más branch-eket
+                  push-oltál).
                 </li>
               </ul>
             </div>
@@ -142,18 +148,20 @@
             <img src="images/branches.png" alt="branches flowchart"/>
 
             <div class="text">
-              Importantly, when you push to a remote repository, you do <em>not</em>
-              have to push all of your branches.  You can only share one of your
-              branches and not all of them.  This tends to free people to try
-              new ideas without worrying about having to plan how and when they
-              are going to merge it in or share it with others.
+              Fontos, hogy amikor egy távoli repository-ba push-olsz, akkor
+              <em>nem</em> kell minden branch-et push-olnod.  Megoszthatod
+              csak az egyik branch-edet, nem pedig az összeset.  Ez hajlamos
+              felszabadítani az embereket, hogy új ötleteket próbáljanak ki
+              anélkül, hogy annak megtervezésén aggódnának, hogy az mikor és
+              hogyan lesz beolvasztva, vagy megosztva másokkal.
             </div>
 
             <div class="text">
-              You <em>can</em> find ways to do some of this with other systems, but the work
-              involved is much more difficult and error-prone.  Git makes this
-              process incredibly easy and it changes the way most developers
-              work when they learn it.
+              <em>Lehet</em> módot találni arra, hogy ezek közül párat
+              megtegyünk más rendszerekkel, de az ehhez szükséges munka sokkal
+              bonyolultabb és hibára hajlamosabb.  A Git ezt a folyamatot
+              elképesztően könnyűvé teszi, és a legtöbb fejlesztő esetében
+              megváltoztatja azt, ahogyan dolgozik, miután ezt megtanulta.
             </div>
 
             <!-- TODO : (short screencast showing the awesomeness of git branches) -->
