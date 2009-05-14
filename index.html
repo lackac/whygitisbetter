@@ -1,1 +1,896 @@
-Here will be the Hungarian translation for whygitisbetter
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="hu" lang="hu">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+  <title>Miért jobb a Git, mint X</title>
+
+  <link rel="stylesheet" href="blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="blueprint/print.css" type="text/css" media="print" />
+  <!--[if IE]><link rel="stylesheet" href="blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript"></script>
+
+  <style type="text/css">
+    html { overflow-y: scroll; }
+    body { margin-top: 1.5em; }
+    .header h1 { font-size: 3.5em; color: #666; }
+    .expand_collapse_links { text-align: center; margin-bottom: 1.5em; display: none; }
+    .expand_collapse_links a { color: #555; }
+    img { margin-bottom: 10px; }
+    .center { text-align: center; }
+    .text, p { font-size: 1.2em; margin-bottom: 10px; text-align: justify;}
+    .intro { color: #444; }
+    ul li { margin-top: 10px; }
+    .section h2 { padding-left: 5px; background-color: #eee; cursor: pointer;}
+    .section h2 a { color: #333; text-decoration:none; display: block; }
+    .section { padding-bottom: 2px; }
+    .contents { padding: 0 10px; width: 610px; }
+    .args { float:right; }
+    .lang { padding: 3px; font-weight: bold;}
+    .section .lang { font-size: 0.8em; padding: 2px; font-weight: normal;}
+    .svn { color: hsl(260,57%,24%); background: hsl(260,57%,83%) }
+    .perforce { color: hsl(0,57%,24%); background: hsl(0,57%,83%) }
+    .bzr { color: hsl(60,57%,24%); background: hsl(60,57%,83%) }
+    .hg { color: hsl(190,57%,24%); background: hsl(190,57%,83%) }
+    .nowrap { white-space: nowrap; }
+    .sweet { color: #363; background: #beb; }
+    .compare { color: #663; background: #eeb; }
+    .help pre { font-size: 12px; }
+    .help td { vertical-align: top; }
+    code { font-size: 90%; }
+    .footer { text-align: center; color: #663; background-color: #eea; padding: 10px;}
+    .footer a { color: #440; }
+    .footer-lang { text-align: center; color: #443; background-color: #dda; padding: 5px; font-size: 90%; }
+    .footer-lang a { color: #330; }
+    .footer-badges { text-align: center; }
+    .footer-badges a { color: #777; }
+    .lang a {color: inherit; text-decoration: none;}
+    .note { text-decoration: italic; color: #666; padding: 1em; }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+
+      <div class="span-24 header">
+        <table width="100%">
+          <tr><td>
+            <h1>Miért jobb a Git, mint X</h1>
+          </td><td align="right">
+            <div id="menu">
+              <span class="lang hg">hg</span>
+              <span class="lang bzr">bzr</span>
+              <span class="lang svn">svn</span>
+              <span class="lang perforce">perforce</span>
+            </div>
+            <img style="float: right" alt="ahol &quot;x&quot; egyik ezek közül" src="images/wherex.gif" />
+          </td></tr>
+        </table>
+      </div>
+
+      <div class="span-24">
+          <div class="text intro">
+            Ez az oldal azért jött létre, mert mostanában úgy tűnik rengeteg
+            időt töltök azzal, hogy a gitezőket védem a fanbojista,
+            bandwagonista és koolaid-szomj vádakkal szemben.
+            Itt van tehát, hogy miért váltanak emberek Gitre X-ről, és miért
+            kellene neked is váltanod.
+            A megtekintéshez csupán kattints egy okra.
+          </div>
+
+          <div class="expand_collapse_links">
+            <a href="#" class="expand_all">Összes kibontása</a> |
+            <a href="#" class="collapse_all">Összes bezárása</a>
+          </div>
+      </div>
+
+      <div class="span-24 section">
+          <div class="args">
+            <span class="lang hg">hg</span>
+            <span class="lang bzr">bzr</span>
+            <span class="lang svn">svn</span>
+            <span class="lang perforce">perforce</span>
+          </div>
+
+          <h2>
+          <a name="cheap-local-branching" href="#cheap-local-branching">Olcsó lokális branch-ek</a>
+          </h2>
+          <div class="contents">
+
+            <div class="text">
+              A Git branch-elő modellje talán a legfontosabb jellemző, ami
+              igazán kiemeli az összes többi verizókövető rendszer közül.
+              Ez teljesen eltér az összes többi modelltől, amivel itt
+              összehasonlítom, és amelyek közül a legtöbb azt az elvet ajánlja,
+              hogy a legjobb branch igazából a repository klónozása egy új
+              könyvtárba.
+            </div>
+
+            <div class="text">
+              A Git nem így működik.  Git segítségével több lokális branch-et
+              tarthatsz fenn, amelyek teljesen függetlenek egymástól. Ezen
+              fejlesztési vonalak létrehozása, egyesítése és törlése csupán
+              másodpercekbe kerül.
+            </div>
+
+
+            <div class="text">
+              Ez azt jelenti, hogy olyan dolgokat tehetsz, mint például:
+              <ul>
+                <li>Létrehozol egy új branch-et, hogy kipróbálhass egy új
+                  ötletet, néhányszor commitolsz, visszaváltasz oda, ahonnan
+                  branch-eltél, egy patch-et alkalmazol, visszaváltasz a
+                  kisérletező helyre, és beolvasztod.
+                </li>
+                <li>Fenntartasz egy branch-et, amiben mindig csak az éles
+                  rendszerbe kerülő dolgok vannak, egy másikat, amibe a
+                  tesztelésre kerülő munkákat olvasztod be, és több kisebbet
+                  a mindennapi feladatokra.
+                </li>
+                <li>Minden újabb feladatra, amelyen dolgoznod kell új branch-et
+                  hozol létre, hogy gond nélkül váltogathass közöttük.  Ezek
+                  után mindegyiket törlöd, amikor az adott dolog beolvasztásra
+                  kerül a főágban.
+                </li>
+                <li>Létrehozol egy új branch-et kísérletezésre, majd rájössz,
+                  hogy az úgy nem fog működni, és ezért egyszerűen kitörlöd,
+                  lemondva az abban végzett munkádról. Ezt az egészet pedig
+                  senki más nem látja (akkor sem, ha közben más branch-eket
+                  push-oltál).
+                </li>
+              </ul>
+            </div>
+
+            <img src="images/branches.png" alt="branches flowchart"/>
+
+            <div class="text">
+              Fontos, hogy amikor egy távoli repository-ba push-olsz, akkor
+              <em>nem</em> kell minden branch-et push-olnod.  Megoszthatod
+              csak az egyik branch-edet, nem pedig az összeset.  Ez hajlamos
+              felszabadítani az embereket, hogy új ötleteket próbáljanak ki
+              anélkül, hogy annak megtervezésén aggódnának, hogy az mikor és
+              hogyan lesz beolvasztva, vagy megosztva másokkal.
+            </div>
+
+            <div class="text">
+              <em>Lehet</em> módot találni arra, hogy ezek közül párat
+              megtegyünk más rendszerekkel, de az ehhez szükséges munka sokkal
+              bonyolultabb és hibára hajlamosabb.  A Git ezt a folyamatot
+              elképesztően könnyűvé teszi, és a legtöbb fejlesztő esetében
+              megváltoztatja azt, ahogyan dolgozik, miután ezt megtanulta.
+            </div>
+
+            <!-- TODO : (short screencast showing the awesomeness of git branches) -->
+            <!-- TODO : (show tweets somehow) -->
+
+            <div class="tweets">
+              <img alt='jamis twitter' width="300" src="http://twictur.es/i/1022811017.gif" />
+              <img alt='trevorturk twitter' width="300" src="http://twictur.es/i/1022886570.gif" />
+              <img alt='thillerson twitter' width="300" src="http://twictur.es/i/1022842917.gif" />
+              <img alt='boblmartens twitter' width="300" src="http://twictur.es/i/1022818467.gif" />
+              <img alt='mathie twitter' width="300" src="http://twictur.es/i/1022816942.gif" />
+            </div>
+          </div>
+      </div>
+
+      <div class="span-24 section">
+          <div class="args">
+            <span class="lang svn">svn</span>
+            <span class="lang perforce">perforce</span>
+          </div>
+          <h2>
+          <a name="everything-is-local" href="#everything-is-local">Minden lokális</a>
+          </h2>
+          <div class="contents">
+
+            <div class="text">
+              Ez alapvetően igaz minden elosztott verziókövető rendszerre, de
+              tapasztalatom szerint a Git esetében ez még inkább igaz. Nagyon
+              kevés dolog van a 'fetch', 'pull' és 'push' parancsokon kívül,
+              ami bármilyen módon a merevlemezeden kívül mással is kommunikálna.
+            </div>
+
+            <div class="text">
+              Ez azon túl, hogy a legtöbb műveletet sokkal jobban felgyorsítja,
+              mint amihez hozzászoktál, azt is lehetővé teszi, hogy offline
+              végezd a munkádat.  Ez lehet, hogy nem tűnik olyan nagy dolognak,
+              de engem mindig ledöbbent, hogy igazából milyen gyakran dolgozok
+              offline.  Nagyon produktív dolog képesnek lenni branch-elésre,
+              merge-ölésre, commitolásra és a projekt történetének
+              böngészésére, amíg mondjuk repülőn, vagy vonaton ülsz.
+            </div>
+
+            <div class="center"><img style="width: 500px" src="images/local-remote.png" alt="lokális repóból távoli repóba flowchart" /></div>
+
+            <div class="text">
+              Még a Mercurial esetében is, az általános parancsok &ndash; így például az
+              'incoming' és 'outgoing' &ndash; a szerverrel kommunikálnak, míg a Git
+              esetében a szerveren található összes adatot 'fetch'-elheted,
+              mielőtt átmész offline módba, és csinálhatsz összehasonlításokat,
+              beolvasztásokat és logot azokkal az adatokkal, amik a szerveren
+              vannak, de még nem találhatóak meg a lokális branch-eidben.
+            </div>
+
+            <div class="text">
+              Ez azt jelenti, hogy nagyon könnyű másolatokat fenntartani, nem
+              csak a saját branch-eidből, hanem mindenki más branch-eiből is,
+              aki veled együtt dolgozik a Git repository-dban anélkül, hogy ez
+              megkavarná a saját dolgaidat.
+            </div>
+
+          </div>
+      </div>
+
+      <div class="span-24 section">
+          <div class="args">
+            <span class="lang bzr">bzr</span>
+            <span class="lang svn">svn</span>
+            <span class="lang perforce">perforce</span>
+          </div>
+
+          <h2>
+          <a name="git-is-fast" href="#git-is-fast">A Git gyors</a>
+          </h2>
+
+          <div class="contents">
+            <div class="text">
+              A Git gyors.  Mindenki &ndash; még más rendszerek megrögzött
+              követőinek többsége is &ndash; általánosan elismeri a Gitnek
+              ezt a címét.  Git esetében minden művelet lokálisan megy végbe,
+              emiatt előnyt élvez az SVN-nel és Perforce-szal szemben, amely
+              rendszerek esetében bizonyos műveletekhez hálózati elérés
+              szükséges.  Azonban más elosztott verziókövető rendszerekhez
+              hasonlítva is a Git meglehetősen gyors.
+            </div>
+
+            <div class="text">
+              Ez egyrészt valószínűleg amiatt van így, mert a Linux kernel
+              kezelésére építették, ami azt jelenti, hogy az első naptól kezdve
+              hatékonyan kellett kezeljen nagy repository-kat is.  Ráadásul
+              a Gitet C-ben írták, csökkentve ezzel a magasabb színtű
+              nyelvek futtatókörnyezetének tulajdonított többletköltséget.
+              Egy másik ok, ami miatt a Git ilyen gyors az, hogy a vezető
+              fejlesztői ezt az alkalmazás tervezésekor is már célként
+              tűzték ki.
+            </div>
+
+            <div class="text">
+              Az alábbiakban néhány teljesítményteszt eredményei láthatóak,
+              amelyet a Django keretrendszer forráskódjával végeztem három
+              különböző verziókövető rendszeren: Git, Mercurial és Bazaar.
+              Ezek közül néhány dolgot SVN-nel is teszteltem, de higgyétek el,
+              sokkal lassabb (viszonyításként vegyétek a Bazaar eredményeit,
+              és adjátok hozzá a hálózat késleltetését).
+            </div>
+
+            <table>
+            <tr><td class="nowrap">
+              <img src="http://chart.apis.google.com/chart?cht=bvs&amp;chs=100x125&amp;chd=t:2,5,60&amp;chds=0,60&amp;chxt=x&amp;chco=4d89f9&amp;chl=git|hg|bzr&amp;chtt=Init" alt="init mérések" />
+
+              <img src="http://chart.apis.google.com/chart?cht=bvs&amp;chs=100x125&amp;chd=t:85,3,23&amp;chds=0,100&amp;chxt=x&amp;chco=4d89f9&amp;chl=git|hg|bzr&amp;chtt=Add" alt="add mérések" />
+
+              <img src="http://chart.apis.google.com/chart?cht=bvs&amp;chs=100x125&amp;chd=t:45,194,1474&amp;chds=0,1474&amp;chxt=x&amp;chco=4d89f9&amp;chl=git|hg|bzr&amp;chtt=Status" alt="status mérések" />
+
+              <img src="http://chart.apis.google.com/chart?cht=bvs&amp;chs=100x125&amp;chd=t:5,21,142&amp;chds=0,142&amp;chxt=x&amp;chco=4d89f9&amp;chl=git|hg|bzr&amp;chtt=Diff" alt="diff mérések" />
+            </td><td rowspan="2">
+              <img src="http://chart.apis.google.com/chart?cht=bvg&amp;chs=190x275&amp;chd=t:1,123,390|11,946,820&amp;chds=0,1210&amp;chxt=x&amp;chco=4d89f9,c6d9fd&amp;chl=git|hg|bzr&amp;chtt=Branching" alt="branching mérések" />
+            </td></tr>
+            <tr><td class="nowrap">
+              <img src="http://chart.apis.google.com/chart?cht=bvs&amp;chs=100x125&amp;chd=t:5,120,189&amp;chds=0,230&amp;chxt=x&amp;chco=4d89f9&amp;chl=git|hg|bzr&amp;chtt=Tag" alt="tag mérések" />
+
+              <img src="http://chart.apis.google.com/chart?cht=bvs&amp;chs=100x125&amp;chd=t:7,26,90&amp;chds=0,90&amp;chxt=x&amp;chco=4d89f9&amp;chl=git|hg|bzr&amp;chtt=Log" alt="log mérések" />
+
+              <img src="http://chart.apis.google.com/chart?cht=bvs&amp;chs=100x125&amp;chd=t:124,125,230&amp;chds=0,230&amp;chxt=x&amp;chco=4d89f9&amp;chl=git|hg|bzr&amp;chtt=Commit+(Lg)" alt="nagy commit mérések" />
+
+              <img src="http://chart.apis.google.com/chart?cht=bvs&amp;chs=100x125&amp;chd=t:8,51,113&amp;chds=0,113&amp;chxt=x&amp;chco=4d89f9&amp;chl=git|hg|bzr&amp;chtt=Commit+(Sm)" alt="kis commit mérések" />
+            </td></tr>
+            </table>
+
+            <div class="text">
+              A végeredmény, hogy az új fájlok hozzáadásán kívül mindenben
+              a Git volt a leggyorsabb. (Illetve még nagyon nagy commitok
+              esetében a Hg nagyjából hasonlóan teljesített, de a commit, amit
+              teszteltem olyan nagy volt, hogy elég valószínűtlen, hogy
+              valami hasonlót kell majd csinálnod. A normális commitok sokkal
+              gyorsabbak Gittel.)
+            </div>
+
+            <table>
+              <tr>
+                <th></th>
+                <th>Git</th>
+                <th>Hg</th>
+                <th>Bzr</th>
+              </tr>
+              <tr>
+                <th>Init</th>
+                <td class="sweet">0.024s</td>
+                <td>0.059s</td>
+                <td>0.600s</td>
+              </tr>
+              <tr>
+                <th>Add</th>
+                <td>8.535s</td>
+                <td class="sweet">0.368s</td>
+                <td>2.381s</td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td class="sweet">0.451s</td>
+                <td>1.946s</td>
+                <td>14.744s</td>
+              </tr>
+              <tr>
+                <th>Diff</th>
+                <td class="sweet">0.543s</td>
+                <td>2.189s</td>
+                <td>14.248s</td>
+              </tr>
+              <tr>
+                <th>Tag</th>
+                <td class="sweet">0.056s</td>
+                <td>1.201s</td>
+                <td>1.892s</td>
+              </tr>
+              <tr>
+                <th>Log</th>
+                <td class="sweet">0.711s</td>
+                <td>2.650s</td>
+                <td>9.055s</td>
+              </tr>
+              <tr>
+                <th>Commit (nagy)</th>
+                <td class="sweet">12.480s</td>
+                <td>12.500s</td>
+                <td>23.002s</td>
+              </tr>
+              <tr>
+                <th>Commit (kicsi)</th>
+                <td class="sweet">0.086s</td>
+                <td>0.517s</td>
+                <td>1.139s</td>
+              </tr>
+              <tr>
+                <th>Branch (hideg)</th>
+                <td class="sweet">1.161s</td>
+                <td>94.681s</td>
+                <td>82.249s</td>
+              </tr>
+              <tr>
+                <th>Branch (meleg)</th>
+                <td class="sweet">0.070s</td>
+                <td>12.300s</td>
+                <td>39.411s</td>
+              </tr>
+            </table>
+
+            <div class="text">
+              A hideg és meleg branch-elő számok a repository első és második
+              branch-eléséhez tartoznak, ahol a második esetében a branch-elés
+              friss diszk cache-sel történtek.
+            </div>
+
+            <div class="text">
+              Meg kell még jegyezni, hogy bár az 'add' művelet sokkal lassabb,
+              ez egy masszív 'add' művelet volt (több, mint 2000 fájl).
+              A legtöbb ember mindennapi munkájának nagy részében az 'add'
+              művelet mindegyik mért rendszer esetében csak a másodperc
+              töredékéig tart.  Az összes többi mért művelet (talán még a nagy
+              commitot kivéve) olyan dolgokat vesz figyelembe, amelyekkel
+              napról napra talákozhatsz.
+            </div>
+
+
+          <div class="text">
+            Ezeket a számokat egyáltalán nem nehéz reprodukálni. Egyszerűen
+            klónozd le a Django projektet bármelyik rendszerben és próbáld ki
+            mindegyikben ugyanezeket a parancsokat.
+            <ul>
+              <li><code>git clone git://github.com/brosner/django.git dj-git</code></li>
+              <li><code>hg clone http://hg.dpaste.com/django/trunk dj-hg</code></li>
+              <li><code>bzr branch lp:django dj-bzr</code></li>
+              <li><code>svn checkout http://code.djangoproject.com/svn/django/trunk dj-svn</code></li>
+            </ul>
+          </div>
+
+        </div>
+
+
+      </div>
+
+      <div class="span-24 section">
+          <div class="args">
+            <span class="lang svn">svn</span>
+          </div>
+
+          <h2>
+          <a name="git-is-small" href="#git-is-small">A Git kicsi</a>
+          </h2>
+
+          <div class="contents">
+            <div class="text">
+              A Git nagyon jó a tárterület spórolásban.  A Git könyvtárad
+              (általában) alig lesz nagyobb egy SVN checkout-nál &ndash; néhány
+              esetben akár kisebb is lehet (úgy tűnik sok minden kerülhet
+              azokba a .svn könyvtárakba).
+            </div>
+
+            <div class="text">
+              Az alábbi számok a Django projekt félhivatalos tükrözéseinek
+              ugyanazon pontjából készült klónjait tükrözik.
+            </div>
+
+            <table>
+              <tr>
+                <th></th>
+                <th>Git</th>
+                <th>Hg</th>
+                <th>Bzr</th>
+                <th>SVN</th>
+              </tr>
+              <tr>
+                <td>Csak a repository</td>
+                <td class="sweet">24M</td>
+                <td>34M</td>
+                <td>45M</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>A teljes könyvtár</td>
+                <td class="compare">43M</td>
+                <td>53M</td>
+                <td>64M</td>
+                <td class="compare">61M</td>
+              </tr>
+            </table>
+
+          </div>
+      </div>
+
+      <div class="span-24 section">
+          <div class="args">
+            <span class="lang hg">hg</span>
+            <span class="lang bzr">bzr</span>
+            <span class="lang svn">svn</span>
+            <span class="lang perforce">perforce</span>
+          </div>
+
+          <h2>
+          <a name="the-staging-area" href="#the-staging-area">A staging area</a>
+          </h2>
+
+          <div class="contents">
+            <div class="text">
+              Más rendszerekkel szemben a Git rendelkezik egy ún. "staging area"
+              vagy másnéven "index" résszel.  Ez egy átmeneti terület, ahol
+              commitálás előtt összerakhatod a commitodat, hogy az úgy nézzen
+              ki, ahogyan szeretnéd.
+            </div>
+
+            <div class="text">
+              A nagyszerű dolog a staging area-val kapcsolatban, és ami kiemeli
+              a Gitet az összes többi verziókövető rendszer közül az az, hogy
+              amint végeztél néhány fájllal, egyszerűen berakhatod az indexbe,
+              és commitolhatod őket anélkül, hogy az aktuális könyvtárban lévő
+              összes módosított fájlt commitolnád, és nem is kell egyesével
+              felsorolni őket commitoláskor.
+            </div>
+            <div class="center"><img src="images/index1.png" alt="add és commitolás workflow diagramm" /></div>
+
+            <div class="text">
+              Ez egyben lehetővé teszi azt is, hogy egy módosított fájl csak
+              bizonyos részeit rakd be az indexbe.  Vége azoknak a napoknak,
+              hogy két logikailag különálló módosítást hajtasz végre egy fájlon,
+              mielőtt ráeszmélnél, hogy egyiket elfelejtetted commitolni.
+              Mostmár lehetőséged van arra, hogy csak az aktuális commithoz
+              szükséges módosítást rakd be az indexbe, és a másikat a következő
+              commitra hagyd.  Ez a képesség a fájlon elvégzett annyi
+              módosítást le tud kezelni, amennyire csak szükséged van.
+            </div>
+
+            <div class="text">
+              Természetesen a Git egyben nagyon egyszerűvé teszi ennek
+              a képességnek a figyelmen kívül hagyását, ha nincs szükséged ilyen
+              szintű kontrollra. Csak rakj egy '-a' kapcsolót a commit
+              parancshoz, hogy minden fájl minden módosítása bekerüljön
+              az indexbe.
+            </div>
+
+            <div class="center"><img src="images/index2.png" alt="csak commitolás workflow diagramm" /></div>
+          </div>
+      </div>
+
+      <div class="span-24 section">
+          <div class="args">
+            <span class="lang svn">svn</span>
+            <span class="lang perforce">perforce</span>
+          </div>
+
+          <h2>
+          <a name="distributed" href="#distributed">Elosztott</a>
+          </h2>
+
+          <div class="contents">
+            <div class="text">
+              Egyik legnagyszerűbb tulajdonsága az elosztott verziókövető
+              rendszereknek, beleértve a Gitet is, hogy elosztottak.  Ez azt
+              jelenti, hogy ahelyett, hogy a forráskód legfrissebb állapotáról
+              csinálnál egy "checkout"-ot, egy "clone"-t készítesz az egész
+              repository-ról. 
+            </div>
+
+            <div class="text">
+              Ez azt jelenti, hogy még akkor is, ha egy központosított
+              workflowt használsz, minden felhasználónál megtalálható
+              a központi szerveren található repository tulajdonképpeni teljes
+              backupja.  Egy üzemzavar, vagy meghibásodás esetében ezek
+              bármelyike visszatolható a szerverre, hogy lecserélje a központi
+              szerveren levő példányt.  Alapvetően a Git esetében nincs
+              egypontos hibaforrás, hacsak nem csupán egy pont van.
+            </div>
+
+            <div class="text">
+              Ez ráadásul nem is lassítja le a dolgokat.  Átlagosan egy SVN
+              checkout csak kevéssel gyorsabb, mint bármelyik elosztott
+              rendszernél. Az általam tesztelt elosztott rendszerek közül a Git
+              volt a leggyorsabb.
+            </div>
+
+            <table>
+              <tr><td>
+                <img src="http://chart.apis.google.com/chart?cht=bvs&amp;chs=200x150&amp;chd=t:120,144,311,64&amp;chds=0,320&amp;chco=4d89f9&amp;chl=git|hg|bzr|svn&amp;chtt=Clone" alt="klónozás mérések" />
+              </td><td style="width: 80%">
+                <table>
+                  <tr>
+                    <th>Git</th>
+                    <td class="sweet">1m 59s</td>
+                  </tr>
+                  <tr>
+                    <th>Hg</th>
+                    <td>2m 24s</td>
+                  </tr>
+                  <tr>
+                    <th>Bzr</th>
+                    <td>5m 11s</td>
+                  </tr>
+                  <tr>
+                    <th>SVN</th>
+                    <td>1m 4s</td>
+                  </tr>
+                </table>
+              </td></tr>
+            </table>
+
+          </div>
+      </div>
+
+
+      <div class="span-24 section">
+        <div class="args">
+          <span class="lang svn">svn</span>
+          <span class="lang perforce">perforce</span>
+        </div>
+
+        <h2>
+        <a name="any-workflow" href="#any-workflow">Tetszőleges workflow</a>
+        </h2>
+
+        <div class="contents">
+          <div class="text">
+            Egyik fantasztikus dolog a Gittel kapcsolatban, hogy az elosztott
+            jellege és a szuper branchelő rendszere miatt könnyen
+            implementálhatsz nagyjából bármilyen workflowt, amit el tudsz
+            képzelni.
+          </div>
+
+          <h3>Subversion stílusú workflow</h3>
+
+          <div class="text">
+            Egy eléggé elterjedt workflow, főleg a centralizált rendszerekből
+            jövő emberek számára, a centralizált workflow.  A Git nem engedi,
+            hogy pusholj, ha más már pusholt a legutóbbi fetch-elésed óta.
+            Így a centralizált modell, ahol minden fejlesztő ugyanarra a
+            szerverre pushol kitűnően működik.
+          </div>
+
+          <div class="center"><img src="images/workflow-a.png" alt="subversion stílusú workflow" /></div><br/>
+
+          <h3>Integrációs menedzser workflow</h3>
+
+          <div class="text">
+            Egy másik elterjedt Git workflow az, ahol van egy integrációs
+            menedzser &ndash; egyetlen ember, akinek a 'kitüntetett'
+            repository-ba commitol. Rajta kívül a többi fejlesztő ezt a
+            repository-t klónozza le, és a saját független repository-jába
+            pushol, majd megkéri az integrálót, hogy pullolja a változtatásait.
+            Ez az a fejlesztési modell, amit gyakran meg lehet figyelni az
+            nyílt forrású projekteknél és a GitHub repository-knál.
+          </div>
+
+          <div class="center"><img src="images/workflow-b.png" alt="integrációs menedzser workflow" /></div><br/>
+
+          <h3>Diktátor és hadnagyok workflow</h3>
+
+          <div class="text">
+            A masszívabb projektek esetében szervezheted úgy a fejlesztőidet,
+            ahogyan a Linux kernelt is fejlesztik. Ebben az esetben bizonyos
+            emberek az egész rendszer egy konkrét részegységéért felelősek
+            ('hadnagyok'), és az ahhoz tartozó változtatásokat olvasztják be.
+            Egy másik integráló pedig (a 'diktátor') a változásokat csak a
+            hadnagyaitól veszi és azokat a 'kitüntetett' repository-ba
+            pusholja, ahonnan aztán mindenki újra klónozza őket.
+          </div>
+
+          <div class="center"><img src="images/workflow-c.png" alt="diktátor és  hadnagyok workflow" /></div><br/>
+
+          <div class="text">
+            Egyszóval a Git teljesen flexibilis ezzel az egésszel kapcsolatban,
+            úgyhogy úgy keverheted és alakíthatod a workflowt, ahogyan az a
+            legjobb számodra.
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="span-24 section">
+        <div class="args">
+          <span class="lang hg">hg</span>
+          <span class="lang svn">svn</span>
+          <span class="lang perforce">perforce</span>
+        </div>
+
+        <h2>
+        <a name="github" href="#github">GitHub</a>
+        </h2>
+
+        <div class="contents">
+
+          <img style="float:right; padding:10px" src="images/octocat.png" alt="octocat" />
+
+          <div class="text">
+            <em>Talán</em> elfogultnak tűnhetek, tekintve, hogy a
+            <a href="http://github.com">GitHub</a>-nak dolgozom, de úgy
+            döntöttem, beszúrom ezt a témakört is, mivel olyan sokan mondják,
+            hogy épp a GitHub miatt választják a Git verziókövetőt.
+          </div>
+
+          <div class="text">
+            A GitHub léte jó ok sokak számára, hogy a Gitet használják, hiszen
+            a GitHub több egy egyszerű hoszting oldalnál &ndash; leginkább
+            kódmegosztó társas hálózatként jellemezhető.  A fejlesztők itt
+            rátalálhatnak más fejlesztőkre vagy olyan projektekre, amelyek
+            esetleg hasonlítanak ahhoz, ami őket is foglalkoztatja. Mi sem
+            egyszerűbb, mint a GitHub-on forkolni és hozzájárulni, létrehozva
+            ezzel egy élénk közösséget a Git és a Gitre építő projektek köré.
+          </div>
+
+          <div class="text">
+            Vannak más, akár Git vagy egyéb verziókövető rendszerre épülő
+            szolgáltatások is, de ezek csak elvétve mondhatók
+            felhasználóközpontúnak vagy társas célzatúnak &ndash;
+            a felhasználók száma pedig egyszerűen meg sem közelíti a GitHub-ét.
+            A GitHub társas aspektusa mindent visz.  Ha ehhez hozzávesszük a
+            fenti jellemzőket, a rapid módon fejlődő nyílt forrású projektek
+            számára jó döntés lehet a Git és a GitHub együttes használata.
+          </div>
+
+          <div class="text">
+            Ilyen jellegű közösség egyetlen más verziókövető rendszer esetében
+            sem létezik.
+          </div>
+
+        </div>
+      </div>
+
+
+      <!--
+        OTHER IDEAS:
+        * easy merging
+        * easy server setup
+        * non destructive
+      -->
+
+
+      <!-- GIT MYTHS -->
+
+      <div class="span-24 section">
+        <div class="args">
+          <span class="lang perforce">perforce</span>
+        </div>
+
+        <h2>
+        <a name="easy-to-learn" href="#easy-to-learn">Könnyen tanulható</a>
+        </h2>
+
+        <div class="contents">
+          <div class="text">
+            Ez nem mindig volt így &ndash; a Git korai változatai nem egy
+            verziókövető rendszerre emlékeztettek, hanem sokkal inkább egy
+            halom eszközre, amelyek segítségével elosztott módon tudtál
+            dolgozni egy verziózott fájlrendszeren.  Mára azonban a
+            parancskészlet és a tanulási görbe éppen olyan jó, mint más
+            verziókövető rendszerek esetében, sőt, némely rendszereknél
+            még jobb is.
+          </div>
+
+          <div class="text">
+            Mivel elég nehéz lenne objektíven bizonyítani mindezt megfelelő
+            kutatások híján, egyszerűen bemutatom a Mercurial és a Git
+            alapértelmezett 'help' menüje közötti különbségeket.  Kiemeltem
+            azokat a parancsokat, amelyek a két rendszerben (többé-kevésbé)
+            megegyeznek. (A Hg esetében a 'hg help' kiadása mintegy 40 parancs
+            listáját eredményezi.)
+          </div>
+
+          <table class="help">
+            <tr><td valign="top">
+
+<h3>Mercurial súgó</h3>
+<pre>
+<span class="compare">add</span>        add the specified files ...
+<span class="compare">annotate</span>   show changeset informati...
+<span class="compare">clone</span>      make a copy of an existi...
+<span class="compare">commit</span>     commit the specified fil...
+<span class="compare">diff</span>       diff repository (or sele...
+export     dump the header and diff...
+<span class="compare">init</span>       create a new repository ...
+<span class="compare">log</span>        show revision history of...
+<span class="compare">merge</span>      merge working directory ...
+parents    show the parents of the ...
+<span class="compare">pull</span>       pull changes from the sp...
+<span class="compare">push</span>       push changes to the spec...
+<span class="compare">remove</span>     remove the specified fil...
+serve      export the repository vi...
+<span class="compare">status</span>     show changed files in th...
+update     update working directory
+</pre>
+
+          </td><td valign="top">
+
+<h3>Git súgó</h3>
+<pre>
+<span class="compare">add</span>        Add file contents to the index
+<span class="compare">bisect</span>     Find the change that introduce...
+<span class="compare">branch</span>     List, create, or delete branches
+checkout   Checkout a branch or paths to ...
+<span class="compare">clone</span>      Clone a repository into a new ...
+<span class="compare">commit</span>     Record changes to the repository
+<span class="compare">diff</span>       Show changes between commits, ...
+fetch      Download objects and refs from...
+grep       Print lines matching a pattern
+<span class="compare">init</span>       Create an empty git repository
+<span class="compare">log</span>        Show commit logs
+<span class="compare">merge</span>      Join two or more development h...
+mv         Move or rename a file, a direc...
+<span class="compare">pull</span>       Fetch from and merge with anot...
+<span class="compare">push</span>       Update remote refs along with ...
+rebase     Forward-port local commits to ...
+reset      Reset current HEAD to the spec...
+<span class="compare">rm</span>         Remove files from the working ...
+show       Show various types of objects
+<span class="compare">status</span>     Show the working tree status
+<span class="compare">tag</span>        Create, list, delete or verify...
+</pre>
+        </td></tr>
+        </table>
+
+        <div class="text">
+          A Git 1.6-os verzióját megelőzően minden Git parancsot a futtatási
+          path-ban kellett kiadni, ami sokak számára elég zavarbaejtő volt.
+          Bár a Git még felismeri ezeket a korábbi parancsokat, ma már elég,
+          ha a 'git' parancs része a path-nak.  Ha most összeveted a
+          Mercurial-t és a Git-et, láthatod, hogy a Git szinte teljesen
+          megegyező parancs- és súgókészlettel rendelkezik &ndash;
+          UI szempontból mostanra szinte már alig észrevehetők a különbségek.
+        </div>
+
+        <div class="text">
+          Manapság elég nehéz lenne amellett érvelni, hogy Mercurial vagy a
+          Bazaar használatát egy hangyányival is könnyebb megtanulni, mint a
+          Git-ét.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!--
+      THINGS GIT IS STILL NOT GOOD AT
+      * windows (all)
+      * large files (svn)
+    -->
+
+    <div class="span-24">
+        <div class="expand_collapse_links">
+          <a href="#" class="expand_all">Összes kibontása</a> |
+          <a href="#" class="collapse_all">Összes bezárása</a>
+        </div>
+    </div>
+
+    <div class="span-24 footer">
+      Ezt az oldalt <a href="http://github.com/schacon">Scott Chacon</a>,
+      egy <a href="http://github.com">GitHub-ozó</a> állította össze és
+      tartja karban.<br />
+
+      Ha az oldalon található dolgok közül valamivel nem értesz egyet, és jó okod van rá, akkor <a href="mailto:schacon@gmail.com">küldj emailt</a>, hogy kijavíthassam.<br />
+
+      Az oldal forrása elérhető <a href="http://github.com/lackac/whygitisbetter">GitHub-on</a> &ndash;
+      módosítsd szabadon, és küldj patch-et, ha javítani akarod. <br/>
+    </div>
+
+    <div class="span-24 footer-lang">
+      Más nyelveken :
+      <a href="http://de.whygitisbetterthanx.com">German</a>,
+      <a href="http://es.whygitisbetterthanx.com">Spanish</a>,
+      <a href="http://fr.whygitisbetterthanx.com">French</a>,
+      <a href="http://it.whygitisbetterthanx.com">Italian</a>,
+      <a href="http://lol.whygitisbetterthanx.com">Lolcat</a>,
+      <a href="http://nl.whygitisbetterthanx.com">Dutch</a>,
+      <a href="http://no.whygitisbetterthanx.com">Norwegian</a>,
+      <a href="http://pt.whygitisbetterthanx.com">Portuguese</a>,
+      <a href="http://sv.whygitisbetterthanx.com">Swedish</a>,
+      <a href="http://hu.whygitisbetterthanx.com">Hungarian</a>,
+      <a href="http://zh-cn.whygitisbetterthanx.com">Simplified</a> and
+      <a href="http://zh-tw.whygitisbetterthanx.com">Traditional Chinese</a>
+    </div>
+
+    <div class="span-24 footer-badges">
+      <a href="http://validator.w3.org/check?uri=referer">Valid XHTML</a>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $(function() {
+      $('.section .contents').hide()
+      $('.contents .tweets').hide()
+
+      $('.expand_collapse_links').show()
+      $('.expand_collapse_links .expand_all').click(function() {
+        $('.section .contents').show()
+      })
+      $('.expand_collapse_links .collapse_all').click(function() {
+        $('.section .contents').hide()
+      })
+
+      $('.section h2').click(function() {
+        var hidden = $(this).next().is(':hidden')
+        $(this).next().slideToggle()
+        return hidden
+      })
+
+      $('#menu span').css('cursor', 'pointer').click(function() {
+        $('.section .contents').hide()
+        showSectionsForSCM(this.innerHTML)
+        document.location.hash = this.innerHTML
+      })
+
+      if (document.location.hash) {
+        var anchor = document.location.hash.substring(1)
+        $('.section h2 a[name=' + anchor + ']').parent('h2').click()
+        showSectionsForSCM(anchor)
+      }
+
+      function showSectionsForSCM(scm) {
+        $('.section .' + scm).parents('.section').find('.contents').show()
+      }
+    })
+  </script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-82337-13");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>
