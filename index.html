@@ -576,60 +576,61 @@
         </div>
 
         <h2>
-        <a name="any-workflow" href="#any-workflow">Any Workflow</a>
+        <a name="any-workflow" href="#any-workflow">Bármilyen workflow</a>
         </h2>
 
         <div class="contents">
-
           <div class="text">
-            One of the amazing things about Git is that because of its distributed
-            nature and super branching system, you can easily implement pretty
-            much any workflow you can think of relatively easily.
+            Egyik fantasztikus dolog a Gittel kapcsolatban, hogy az elosztott
+            jellege és a szuper branchelő rendszere miatt könnyen
+            implementálhatsz nagyjából bármilyen workflowt, amit el tudsz
+            képzelni.
           </div>
 
-          <h3>Subversion-Style Workflow</h3>
-
+          <h3>Subversion stílusú workflow</h3>
 
           <div class="text">
-            A very common Git workflow, especially from people transitioning
-            from a centralized system, is a centralized workflow.  Git will
-            not allow you to push if someone has pushed since the last time
-            you fetched, so a centralized model where all developers push to
-            the same server works just fine.
+            Egy eléggé elterjedt workflow, főleg a centralizált rendszerekből
+            jövő emberek számára, a centralizált workflow.  A Git nem engedi,
+            hogy pusholj, ha más már pusholt a legutóbbi fetch-elésed óta.
+            Így a centralizált modell, ahol minden fejlesztő ugyanarra a
+            szerverre pushol kitűnően működik.
           </div>
 
           <div class="center"><img src="images/workflow-a.png" alt="subversion stílusú workflow" /></div><br/>
 
-          <h3>Integration Manager Workflow</h3>
+          <h3>Integrációs menedzser workflow</h3>
 
           <div class="text">
-            Another common Git workflow is where there is an integration
-            manager&mdash;a single person who commits to the 'blessed' repository,
-            and then a number of developers who clone from that repository,
-            push to their own independent repositories and ask the integrator
-            to pull in their changes.  This is the type of development model
-            you often see with open source or GitHub repositories.
+            Egy másik elterjedt Git workflow az, ahol van egy integrációs
+            menedzser &ndash; egyetlen ember, akinek a 'kitüntetett'
+            repository-ba commitol. Rajta kívül a többi fejlesztő ezt a
+            repository-t klónozza le, és a saját független repository-jába
+            pushol, majd megkéri az integrálót, hogy pullolja a változtatásait.
+            Ez az a fejlesztési modell, amit gyakran meg lehet figyelni az
+            nyílt forrású projekteknél és a GitHub repository-knál.
           </div>
 
-          <div class="center"><img src="images/workflow-b.png" alt="integráció menedzselő workflow" /></div><br/>
+          <div class="center"><img src="images/workflow-b.png" alt="integrációs menedzser workflow" /></div><br/>
 
-          <h3>Dictator and Lieutenants Workflow</h3>
+          <h3>Diktátor és hadnagyok workflow</h3>
 
           <div class="text">
-            For more massive projects, you can setup your developers similar to
-            the way the Linux kernel is run, where people are in charge of a
-            specific subsystem of the project ('lieutenants') and merge in all
-            changes that have to do with that subsystem.  Then another integrator
-            (the 'dictator') can pull changes from only his/her lieutenants and
-            push those to the 'blessed' repository that everyone then clones from
-            again.
+            A masszívabb projektek esetében szervezheted úgy a fejlesztőidet,
+            ahogyan a Linux kernelt is fejlesztik. Ebben az esetben bizonyos
+            emberek az egész rendszer egy konkrét részegységéért felelősek
+            ('hadnagyok'), és az ahhoz tartozó változtatásokat olvasztják be.
+            Egy másik integráló pedig (a 'diktátor') a változásokat csak a
+            hadnagyaitól veszi és azokat a 'kitüntetett' repository-ba
+            pusholja, ahonnan aztán mindenki újra klónozza őket.
           </div>
 
           <div class="center"><img src="images/workflow-c.png" alt="diktátor és  hadnagyok workflow" /></div><br/>
 
           <div class="text">
-            Again, Git is entirely flexible about this, so you can mix and
-            match and choose the workflow that is right for you.
+            Ismét, a Git teljesen flexibilis ezzel az egésszel kapcsolatban,
+            úgyhogy úgy keverheted és alakíthatod a workflowt, ahogyan az a
+            legjobb számodra.
           </div>
 
         </div>
