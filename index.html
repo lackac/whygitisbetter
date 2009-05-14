@@ -511,32 +511,38 @@
           </div>
 
           <h2>
-          <a name="distributed" href="#distributed">Distributed</a>
+          <a name="distributed" href="#distributed">Elosztott</a>
           </h2>
 
           <div class="contents">
-
             <div class="text">
-              One of the coolest features of any of the Distributed SCMs, Git included, is that it's
-              distributed.  This means that instead of doing a "checkout" of the current tip of
-              the source code, you do a "clone" of the entire repository.
-            </div>
-            <div class="text">
-              This means that even
-              if you're using a centralized workflow, every user has what is essentially a full
-              backup of the main server, each of which could be pushed up to replace the main server
-              in the event of a crash or corruption.  There is basically no single point of failure
-              with Git unless there is only a single point.
+              Egyik legnagyszerűbb tulajdonsága az elszotott verziókövető
+              rendszereknek, beleértve a Gitet is, hogy elosztottak.  Ez azt
+              jelenti, hogy ahelyett, hogy a forráskód legfrissebb állapotáról
+              csinálnál egy "checkout"-ot, egy "clone"-t készítesz az egész
+              repository-ról. 
             </div>
 
             <div class="text">
-              This does not slow things down much, either.  On average, an SVN checkout is only marginally
-              faster than any of the DSCMs. Of the DSCMs I tested, Git was the fastest.
+              Ez azt jelenti, hogy még akkor is, ha egy központosított
+              workflowt használsz, minden felhasználónál megtalálható
+              a központi szerveren található repository tulajdonképpeni teljes
+              backupja.  Egy üzemzavar, vagy meghibásodás esetében ezek
+              bármelyike visszatolható a szerverre, hogy lecserélje a központi
+              szerveren levő példányt.  Alapvetően a Git esetében nincs
+              egypontos hibaforrás, hacsak nem csupán egy pont van.
+            </div>
+
+            <div class="text">
+              Ez ráadásul nem is lassítja le a dolgokat.  Átlagosan egy SVN
+              checkout csak kevéssel gyorsabb, mint bármelyik elosztott
+              rendszernél. Az általam tesztelt elosztott rendszerek közül a Git
+              volt a leggyorsabb.
             </div>
 
             <table>
               <tr><td>
-                <img src="http://chart.apis.google.com/chart?cht=bvs&amp;chs=200x150&amp;chd=t:120,144,311,64&amp;chds=0,320&amp;chco=4d89f9&amp;chl=git|hg|bzr|svn&amp;chtt=Clone" alt="cloning mérések" />
+                <img src="http://chart.apis.google.com/chart?cht=bvs&amp;chs=200x150&amp;chd=t:120,144,311,64&amp;chds=0,320&amp;chco=4d89f9&amp;chl=git|hg|bzr|svn&amp;chtt=Clone" alt="klónozás mérések" />
               </td><td style="width: 80%">
                 <table>
                   <tr>
