@@ -127,7 +127,7 @@
                   kisérletező helyre, és beolvasztod.
                 </li>
                 <li>Fenntartasz egy branch-et, amiben mindig csak az éles
-                  rendszerbe kerülő dolok vannak, egy másikat amibe a
+                  rendszerbe kerülő dolgok vannak, egy másikat, amibe a
                   tesztelésre kerülő munkákat olvasztod be, és több kisebbet
                   a mindennapi feladatokra.
                 </li>
@@ -189,7 +189,7 @@
 
             <div class="text">
               Ez alapvetően igaz minden elosztott verziókövető rendszerre, de
-              tapasztalatom szerint Git esetében ez még inkább igaz. Nagyon
+              tapasztalatom szerint a Git esetében ez még inkább igaz. Nagyon
               kevés dolog van a 'fetch', 'pull' és 'push' parancsokon kívül,
               ami bármilyen módon a merevlemezeden kívül mással is kommunikálna.
             </div>
@@ -197,28 +197,28 @@
             <div class="text">
               Ez azon túl, hogy a legtöbb műveletet sokkal jobban felgyorsítja,
               mint amihez hozzászoktál, azt is lehetővé teszi, hogy offline
-              végezd a munkáidat.  Ez lehet, hogy nem tűnik olyan nagy dolognak,
+              végezd a munkádat.  Ez lehet, hogy nem tűnik olyan nagy dolognak,
               de engem mindig ledöbbent, hogy igazából milyen gyakran dolgozok
               offline.  Nagyon produktív dolog képesnek lenni branch-elésre,
               merge-ölésre, commitolásra és a projekt történetének
-              böngészésére amíg mondjuk repülőn, vagy vonaton ülsz.
+              böngészésére, amíg mondjuk repülőn, vagy vonaton ülsz.
             </div>
 
             <div class="center"><img style="width: 500px" src="images/local-remote.png" alt="lokális repóból távoli repóba flowchart" /></div>
 
             <div class="text">
-              Még a Mercurial esetében is általános parancsok, mint az
-              'incoming' és 'outgoing' a szerverrel kommunikálnak, míg Git
-              esetében a szerveren található összes adatot 'fetch'-elheted
+              Még a Mercurial esetében is, az általános parancsok &ndash; így például az
+              'incoming' és 'outgoing' &ndash; a szerverrel kommunikálnak, míg a Git
+              esetében a szerveren található összes adatot 'fetch'-elheted,
               mielőtt átmész offline módba, és csinálhatsz összehasonlításokat,
               beolvasztásokat és logot azokkal az adatokkal, amik a szerveren
               vannak, de még nem találhatóak meg a lokális branch-eidben.
             </div>
 
             <div class="text">
-              Ez azt jelenti, hogy nagyon könnyű másolatokat fenntartani nem
+              Ez azt jelenti, hogy nagyon könnyű másolatokat fenntartani, nem
               csak a saját branch-eidből, hanem mindenki más branch-eiből is,
-              aki veled együtt dolgozok a Git repository-dban anélkül, hogy ez
+              aki veled együtt dolgozik a Git repository-dban anélkül, hogy ez
               megkavarná a saját dolgaidat.
             </div>
 
@@ -239,7 +239,7 @@
           <div class="contents">
             <div class="text">
               A Git gyors.  Mindenki &ndash; még más rendszerek megrögzött
-              követői közül legtöbb is &ndash; általánosan elismeri a Gitnek
+              követőinek többsége is &ndash; általánosan elismeri a Gitnek
               ezt a címét.  Git esetében minden művelet lokálisan megy végbe,
               emiatt előnyt élvez az SVN-nel és Perforce-szal szemben, amely
               rendszerek esetében bizonyos műveletekhez hálózati elérés
@@ -249,7 +249,7 @@
 
             <div class="text">
               Ez egyrészt valószínűleg amiatt van így, mert a Linux kernel
-              kezelésére építették, ami azt jelenti, hogy első naptól kezdve
+              kezelésére építették, ami azt jelenti, hogy az első naptól kezdve
               hatékonyan kellett kezeljen nagy repository-kat is.  Ráadásul
               a Gitet C-ben írták, csökkentve ezzel a magasabb színtű
               nyelvek futtatókörnyezetének tulajdonított többletköltséget.
@@ -474,10 +474,10 @@
             <div class="text">
               A nagyszerű dolog a staging area-val kapcsolatban, és ami kiemeli
               a Gitet az összes többi verziókövető rendszer közül az az, hogy
-              ahogy végeztél néhány fájllal, egyszerűen berakhatod az indexbe,
+              amint végeztél néhány fájllal, egyszerűen berakhatod az indexbe,
               és commitolhatod őket anélkül, hogy az aktuális könyvtárban lévő
-              összes módosított fájlt commitálnád, és nem is kell egyesével
-              felsorolni őket commitáláskor.
+              összes módosított fájlt commitolnád, és nem is kell egyesével
+              felsorolni őket commitoláskor.
             </div>
             <div class="center"><img src="images/index1.png" alt="add és commitolás workflow diagramm" /></div>
 
@@ -516,7 +516,7 @@
 
           <div class="contents">
             <div class="text">
-              Egyik legnagyszerűbb tulajdonsága az elszotott verziókövető
+              Egyik legnagyszerűbb tulajdonsága az elosztott verziókövető
               rendszereknek, beleértve a Gitet is, hogy elosztottak.  Ez azt
               jelenti, hogy ahelyett, hogy a forráskód legfrissebb állapotáról
               csinálnál egy "checkout"-ot, egy "clone"-t készítesz az egész
@@ -576,7 +576,7 @@
         </div>
 
         <h2>
-        <a name="any-workflow" href="#any-workflow">Bármilyen workflow</a>
+        <a name="any-workflow" href="#any-workflow">Tetszőleges workflow</a>
         </h2>
 
         <div class="contents">
@@ -628,7 +628,7 @@
           <div class="center"><img src="images/workflow-c.png" alt="diktátor és  hadnagyok workflow" /></div><br/>
 
           <div class="text">
-            Ismét, a Git teljesen flexibilis ezzel az egésszel kapcsolatban,
+            Egyszóval a Git teljesen flexibilis ezzel az egésszel kapcsolatban,
             úgyhogy úgy keverheted és alakíthatod a workflowt, ahogyan az a
             legjobb számodra.
           </div>
