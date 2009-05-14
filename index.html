@@ -183,40 +183,43 @@
             <span class="lang perforce">perforce</span>
           </div>
           <h2>
-          <a name="everything-is-local" href="#everything-is-local">Everything is Local</a>
+          <a name="everything-is-local" href="#everything-is-local">Minden lokális</a>
           </h2>
           <div class="contents">
 
             <div class="text">
-              This is basically true of all the distributed SCMs, but in my
-              experience even more so with Git.  There is very little outside
-              of 'fetch', 'pull' and 'push' that communicates in any way with
-              anything other than your hard disk.
+              Ez alapvetően igaz minden elosztott verziókövető rendszerre, de
+              tapasztalatom szerint Git esetében ez még inkább igaz. Nagyon
+              kevés dolog van a 'fetch', 'pull' és 'push' parancsokon kívül,
+              ami bármilyen módon a merevlemezeden kívül mással is kommunikálna.
             </div>
 
             <div class="text">
-              This not only makes most operations much faster than you may
-              be used to, but it also allows you to work on stuff offline.
-              That may not sound like a big deal, but I'm always amazed at
-              how often I actually do work offline.  Being able to branch,
-              merge, commit and browse history of your project while on
-              the plane or train is very productive.
+              Ez azon túl, hogy a legtöbb műveletet sokkal jobban felgyorsítja,
+              mint amihez hozzászoktál, azt is lehetővé teszi, hogy offline
+              végezd a munkáidat.  Ez lehet, hogy nem tűnik olyan nagy dolognak,
+              de engem mindig ledöbbent, hogy igazából milyen gyakran dolgozok
+              offline.  Nagyon produktív dolog képesnek lenni branch-elésre,
+              merge-ölésre, commit-olásra és a projekt történetének
+              böngészésére amíg mondjuk repülőn, vagy vonaton ülsz.
             </div>
 
             <div class="center"><img style="width: 500px" src="images/local-remote.png" alt="local repo to remote repo flowchart" /></div>
 
             <div class="text">
-              Even in Mercurial, common commands like 'incoming' and 'outgoing' hit
-              the server, whereas with Git you can 'fetch' all the servers data
-              before going offline and do comparisons, merges and logs of data
-              that is on the server but not in your local branches yet.
+              Még a Mercurial esetében is általános parancsok, mint az
+              'incoming' és 'outgoing' a szerverrel kommunikálnak, míg Git
+              esetében a szerveren található összes adatot 'fetch'-elheted
+              mielőtt átmész offline módba, és csinálhatsz összehasonlításokat,
+              beolvasztásokat és logot azokkal az adatokkal, amik a szerveren
+              vannak, de még nem találhatóak meg a lokális branch-eidben.
             </div>
 
             <div class="text">
-              This means that it's very easy to have copies of not only your
-              branches, but also of everyone's branches that are working with
-              you in your Git repository without having to mess your own stuff
-              up.
+              Ez azt jelenti, hogy nagyon könnyű másolatokat fenntartani nem
+              csak a saját branch-eidből, hanem mindenki más branch-eiből is,
+              aki veled együtt dolgozok a Git repository-dban anélkül, hogy ez
+              megkavarná a saját dolgaidat.
             </div>
 
           </div>
@@ -230,34 +233,38 @@
           </div>
 
           <h2>
-          <a name="git-is-fast" href="#git-is-fast">Git is Fast</a>
+          <a name="git-is-fast" href="#git-is-fast">A Git gyors</a>
           </h2>
 
           <div class="contents">
             <div class="text">
-              Git is fast.  Everyone&mdash;even most of the hard core users of these
-              other systems&mdash;generally give Git this title.  With Git, all
-              operations are performed locally giving it a bit of a leg up on
-              SVN and Perforce, both of which require network access for certain operations.
-              However, even compared to the other DSCMs that also perform operations
-              locally, Git is pretty fast.
+              A Git gyors.  Mindenki &ndash; még más rendszerek megrögzött
+              követői közül legtöbb is &ndash; általánosan elismeri a Gitnek
+              ezt a címét.  Git esetében minden művelet lokálisan megy végbe,
+              emiatt előnyt élvez az SVN-nel és Perforce-szal szemben, amely
+              rendszerek esetében bizonyos műveletekhez hálózati elérés
+              szükséges.  Azonban más elosztott verziókövető rendszerekhez
+              hasonlítva is a Git meglehetősen gyors.
             </div>
 
             <div class="text">
-              Part of this is likely because it was built to work on the Linux
-              kernel, which means that it has had to deal effectively with large
-              repositories from day one.  Additionally, Git is written in C, reducing the
-              overhead of runtimes associated with higher-level languages.
-              Another reason that Git is so fast is that the primary developers
-              have made this a design goal of the application.
+              Ez egyrészt valószínűleg amiatt van így, mert a Linux kernel
+              kezelésére építették, ami azt jelenti, hogy első naptól kezdve
+              hatékonyan kellett kezeljen nagy repository-kat is.  Ráadásul
+              a Gitet C-ben írták, csökkentve ezzel a magasabb színtű
+              nyelvek futtatókörnyezetének tulajdonított többletköltséget.
+              Egy másik ok, ami miatt a Git ilyen gyors az, hogy a vezető
+              fejlesztői ezt az alkalmazás tervezésekor is már célként
+              tűzték ki.
             </div>
 
             <div class="text">
-              The following are a number of benchmarks that I performed on three
-              copies of the Django source code repository in 3 different SCMs:
-              Git, Mercurial and Bazaar.  I also tested some of this stuff in SVN,
-              but trust me, it's slower&mdash;basically take the Bazaar numbers and
-              then add network latency...
+              Az alábbiakban néhány teljesítményteszt eredményei láthatóak,
+              amelyet a Django keretrendszer forráskódjával végeztem három
+              különböző verziókövető rendszeren: Git, Mercurial és Bazaar.
+              Ezek közül néhány dolgot SVN-nel is teszteltem, de higgyétek el,
+              sokkal lassabb (viszonyításként vegyétek a Bazaar eredményeit,
+              és adjátok hozzá a hálózat késleltetését).
             </div>
 
             <table>
@@ -284,10 +291,12 @@
             </table>
 
             <div class="text">
-              The end result was that for everything but adding new files, Git
-              was fastest. (Also really large commits, which Hg was basically the
-              same at, but the commit I tested was so large that you're unlikely
-              to ever do anything like it&mdash;normal commits are much faster in Git.)
+              A végeredmény, hogy az új fájlok hozzáadásán kívül mindenben
+              a Git volt a leggyorsabb. (Illetve még nagyon nagy commit-ok
+              esetében a Hg nagyjából hasonlóan teljesített, de a commit, amit
+              teszteltem olyan nagy volt, hogy elég valószínűtlen, hogy
+              valami hasonlót kell majd csinálnod. A normális commit-ok sokkal
+              gyorsabbak Gittel.)
             </div>
 
             <table>
@@ -334,25 +343,25 @@
                 <td>9.055s</td>
               </tr>
               <tr>
-                <th>Commit (Large)</th>
+                <th>Commit (nagy)</th>
                 <td class="sweet">12.480s</td>
                 <td>12.500s</td>
                 <td>23.002s</td>
               </tr>
               <tr>
-                <th>Commit (Small)</th>
+                <th>Commit (kicsi)</th>
                 <td class="sweet">0.086s</td>
                 <td>0.517s</td>
                 <td>1.139s</td>
               </tr>
               <tr>
-                <th>Branch (Cold)</th>
+                <th>Branch (hideg)</th>
                 <td class="sweet">1.161s</td>
                 <td>94.681s</td>
                 <td>82.249s</td>
               </tr>
               <tr>
-                <th>Branch (Hot)</th>
+                <th>Branch (meleg)</th>
                 <td class="sweet">0.070s</td>
                 <td>12.300s</td>
                 <td>39.411s</td>
@@ -360,24 +369,26 @@
             </table>
 
             <div class="text">
-              The cold and hot branching numbers are the numbers for the first
-              and second times that I branched a repo&mdash;the second number being
-              a branch with a hot disk cache.
+              A hideg és meleg branch-elő számok a repository első és második
+              branch-eléséhez tartoznak, ahol a második esetében a branch-elés
+              friss diszk cache-sel történtek.
             </div>
 
             <div class="text">
-              It should be noted that although the 'add' numbers are much slower,
-              this was for a massive add operation&mdash;over 2000 files.  For the
-              majority of what most people do on a daily basis, add ops in any
-              of these systems will only take a fraction of a second. All of the
-              other ops tested here (except for the large commit, possibly) are
-              more indicative of things you might actually do day to day.
+              Meg kell még jegyezni, hogy bár az 'add' művelet sokkal lassabb,
+              ez egy masszív 'add' művelet volt (több, mint 2000 fájl).
+              A legtöbb ember mindennapi munkájának nagy részében az 'add'
+              művelet mindegyik mért rendszer esetében csak a másodperc
+              töredékéig tart.  Az összes többi mért művelet (talán még a nagy
+              commit-ot kivéve) olyan dolgokat vesz figyelembe, amelyekkel
+              napról napra talákozhatsz.
             </div>
 
 
           <div class="text">
-            These numbers are really not difficult to recreate, simply clone the Django
-            project in each of the systems and try out the same commands in each.
+            Ezeket a számokat egyáltalán nem nehéz reprodukálni. Egyszerűen
+            klónozd le a Django projektet bármelyik rendszerben és próbáld ki
+            mindegyikben ugyanezeket a parancsokat.
             <ul>
               <li><code>git clone git://github.com/brosner/django.git dj-git</code></li>
               <li><code>hg clone http://hg.dpaste.com/django/trunk dj-hg</code></li>
